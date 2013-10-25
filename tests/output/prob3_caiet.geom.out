@@ -1,0 +1,139 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+
+Let a 1-equation deterministic point A1 situated on projection of A on line B-C
+Let a 1-equation deterministic point B1 situated on projection of B on line A-C
+Let a 1-equation deterministic point C1 situated on projection of C on line A-B
+Let a 2-equations deterministic point H situated on line A-A1 and line B-B1
+Let a 1-equation deterministic point A2 situated on symmetric point of H with respect to A1
+Let a 1-equation deterministic point B2 situated on symmetric point of H with respect to B1
+Let a 1-equation deterministic point C2 situated on symmetric point of H with respect to C1
+Let a 2-equations deterministic point X situated on line X-A2 parallel with line A-O and line X-B2 parallel with line B-O
+Let a 2-equations deterministic point Y situated on line Y-A2 parallel with line A-O and line Y-C2 parallel with line C-O
+Let a 2-equations deterministic point X13 situated on line A2-X and line B2-X
+
+Conclusion: points X13, C2 and Y are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+========= List of deterministic points:
+
+A1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a1  =  a * c + a^2 + a * b - b * c  / 2 * a 
+
+ a1__  =  a * b + b * c + a * c - a^2  / 2 * a * b * c 
+
+
+B1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b1  =  b * c + b^2 + a * b - a * c  / 2 * b 
+
+ b1__  =  a * b + a * c + b * c - b^2  / 2 * a * b * c 
+
+
+C1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c1  =  b * c + c^2 + a * c - a * b  / 2 * c 
+
+ c1__  =  a * c + a * b + b * c - c^2  / 2 * a * b * c 
+
+
+H is defined by equation: a__ * h + a * a1__ + a1 * h__ - a1__ * h - a * h__ - a1 * a__ = 0
+         and by equation: b__ * h + b * b1__ + b1 * h__ - b1__ * h - b * h__ - b1 * b__ = 0
+After substitutions and simplifications:
+ h  =  c + b + a
+ h__  =  a * b + a * c + b * c  / a * b * c 
+
+
+A2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a2  =   - b * c  / a 
+
+ a2__  =   - a  / b * c 
+
+
+B2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b2  =   - a * c  / b 
+
+ b2__  =   - b  / a * c 
+
+
+C2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c2  =   - a * b  / c 
+
+ c2__  =   - c  / a * b 
+
+
+X is defined by equation: o__ * x + a2 * a__ + a2__ * o + a * x__ - a__ * x - a2 * o__ - o * x__ - a * a2__ = 0
+         and by equation: o__ * x + b2 * b__ + b2__ * o + b * x__ - b__ * x - b2 * o__ - o * x__ - b * b2__ = 0
+After substitutions and simplifications:
+ x  =   - b^2 * c^2 - a^2 * b^2 - a^2 * c^2  / a * b * c
+ x__  =   - a^2 - c^2 - b^2  / a * b * c 
+
+
+Y is defined by equation: o__ * y + a2 * a__ + a2__ * o + a * y__ - a__ * y - a2 * o__ - o * y__ - a * a2__ = 0
+         and by equation: o__ * y + c2 * c__ + c2__ * o + c * y__ - c__ * y - c2 * o__ - o * y__ - c * c2__ = 0
+After substitutions and simplifications:
+ y  =   - b^2 * c^2 - a^2 * c^2 - a^2 * b^2  / a * b * c
+ y__  =   - a^2 - b^2 - c^2  / a * b * c 
+
+
+X13 is defined by equation: a2__ * x13 + a2 * x__ + x * x13__ - x13 * x__ - a2 * x13__ - a2__ * x = 0
+         and by equation: b2__ * x13 + b2 * x__ + x * x13__ - x13 * x__ - b2 * x13__ - b2__ * x = 0
+After substitutions and simplifications:
+ x13  =   - b^2 * c^6 - 3 * a^2 * b^2 * c^4 - b^4 * c^4 - 2 * a^2 * b^4 * c^2 - a^4 * c^4 - a^4 * b^4 - a^2 * c^6 - 2 * a^4 * b^2 * c^2  / a * b * c^5 + a * b^3 * c^3 + a^3 * b^3 * c + a^3 * b * c^3
+ x13__  =   - a^4 * b^2 - 3 * a^2 * b^2 * c^2 - a^4 * c^2 - 2 * a^2 * c^4 - b^4 * c^2 - c^6 - a^2 * b^4 - 2 * b^2 * c^4  / a^3 * b^3 * c + a^3 * b * c^3 + a * b * c^5 + a * b^3 * c^3 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points C and A can not be symmetric with respect to the center of the arbitrary circle 
+ -- points B and A can not be symmetric with respect to the center of the arbitrary circle 
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+c2__ * x13 + c2 * y__ + x13__ * y - x13 * y__ - c2 * x13__ - c2__ * y = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

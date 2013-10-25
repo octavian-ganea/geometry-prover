@@ -1,0 +1,126 @@
+====== Parsing .... 
+Description : ecuation of the Euler Circle : midpoint of HM is always on Euler circle when M moves on the circumscribed circle of tr ABC 
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point M situated on circle Circ
+
+Let a 1-equation deterministic point A1 situated on projection of A on line B-C
+Let a 1-equation deterministic point B1 situated on projection of B on line A-C
+Let a 1-equation deterministic point C1 situated on projection of C on line B-A
+Let a 2-equations deterministic point H situated on line A-A1 and line B-B1
+Let a 1-equation deterministic point N situated on midpoint of H M
+Let a 1-equation deterministic point A2 situated on midpoint of B C
+Let a 1-equation deterministic point B2 situated on midpoint of A C
+Let a 1-equation deterministic point C2 situated on midpoint of A B
+
+Conclusion: points A2, B2, C2 and N are concyclic
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+M is defined by equation: m * m__ - 1 = 0
+After substitutions and simplifications:
+ m__ = 1  / m
+
+========= List of deterministic points:
+
+A1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a1  =  a * c + a^2 + a * b - b * c  / 2 * a 
+
+ a1__  =  a * b + b * c + a * c - a^2  / 2 * a * b * c 
+
+
+B1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b1  =  b * c + b^2 + a * b - a * c  / 2 * b 
+
+ b1__  =  a * b + a * c + b * c - b^2  / 2 * a * b * c 
+
+
+C1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c1  =  b * c + c^2 + a * c - a * b  / 2 * c 
+
+ c1__  =  a * c + a * b + b * c - c^2  / 2 * a * b * c 
+
+
+H is defined by equation: a__ * h + a * a1__ + a1 * h__ - a1__ * h - a * h__ - a1 * a__ = 0
+         and by equation: b__ * h + b * b1__ + b1 * h__ - b1__ * h - b * h__ - b1 * b__ = 0
+After substitutions and simplifications:
+ h  =  c + b + a
+ h__  =  a * b + a * c + b * c  / a * b * c 
+
+
+N is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ n  =  c + b + a + m  / 2 
+
+ n__  =  a * b * m + a * c * m + b * c * m + a * b * c  / 2 * a * b * c * m 
+
+
+A2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a2  =  b + c  / 2 
+
+ a2__  =  c + b  / 2 * b * c 
+
+
+B2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b2  =  a + c  / 2 
+
+ b2__  =  c + a  / 2 * a * c 
+
+
+C2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c2  =  a + b  / 2 
+
+ c2__  =  b + a  / 2 * a * b 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+a2__ * c2 * n * n__ + b2__ * c2 * c2__ * n + a2 * a2__ * b2 * n__ + a2 * b2 * b2__ * c2__ + a2 * c2 * c2__ * n__ + a2 * a2__ * b2__ * c2 + a2 * a2__ * c2__ * n + a2 * b2__ * n * n__ + a2__ * b2 * c2 * c2__ + b2 * b2__ * c2 * n__ + b2 * c2__ * n * n__ + a2__ * b2 * b2__ * n - a2 * a2__ * c2 * n__ - a2 * b2__ * c2 * c2__ - a2__ * c2 * c2__ * n - b2__ * c2 * n * n__ - a2 * a2__ * b2 * c2__ - a2 * b2 * b2__ * n__ - a2__ * b2 * n * n__ - b2 * b2__ * c2__ * n - a2 * c2__ * n * n__ - a2 * a2__ * b2__ * n - b2 * c2 * c2__ * n__ - a2__ * b2 * b2__ * c2 = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

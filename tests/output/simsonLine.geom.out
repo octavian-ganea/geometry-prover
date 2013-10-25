@@ -1,0 +1,86 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point M situated on circle Circ
+
+Let a 1-equation deterministic point A1 situated on projection of M on line B-C
+Let a 1-equation deterministic point B1 situated on projection of M on line A-C
+Let a 1-equation deterministic point C1 situated on projection of M on line B-A
+
+Conclusion: points A1, B1 and C1 are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+M is defined by equation: m * m__ - 1 = 0
+After substitutions and simplifications:
+ m__ = 1  / m
+
+========= List of deterministic points:
+
+A1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a1  =  c * m + m^2 + b * m - b * c  / 2 * m 
+
+ a1__  =  b * m + b * c + c * m - m^2  / 2 * b * c * m 
+
+
+B1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b1  =  c * m + m^2 + a * m - a * c  / 2 * m 
+
+ b1__  =  a * m + a * c + c * m - m^2  / 2 * a * c * m 
+
+
+C1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c1  =  b * m + m^2 + a * m - a * b  / 2 * m 
+
+ c1__  =  a * m + a * b + b * m - m^2  / 2 * a * b * m 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+a1 * b1__ + b1 * c1__ + a1__ * c1 - a1 * c1__ - a1__ * b1 - b1__ * c1 = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

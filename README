@@ -1,0 +1,84 @@
+Ganea Octavian - geometry theorem prover using complex numbers and unit circle
+
+-needed software: scala 2.7.7 and SBT 0.7.5
+
+- to run the program:
+	- commands :
+	$sbt
+	 > run tests/program_name.geom
+
+-output is generated both on screen and in the corresponding file in tests/output/ directory
+- in some cases, computation might take a bit longer (it will finish eventually)
+
+- the program must be run according to the following grammar (see tests/ for more examples):
+
+
+problem = description + hypotehsis + conclusion
+
+	description = some text
+
+	hypotehsis = "Hypothesis:" + arbitrary + semiarbitrary + deterministic + (constraint)?   /* constraint between defined elements */
+
+		arbitrary = arbitrary_circle + (arbitrary_point)*
+
+			arbitrary_circle = "Let an arbitrary circle " + circle_name + "(" + point + ", radix)" /* circle(center, radix)*/ 
+
+			arbitrary_point  = "Let an arbitrary point " + point 
+	
+		semiarbitrary = (semiarbitrary_point)* + (euler_circle)?  /* this is a geometric locus of a point - can be a line, a circle, etc"
+
+			semiarbitrary_point = "Let a semiarbitrary point " + point + " situated on " + equation_hyp_double
+
+			euler_circle = "Let the Euler circle with respect to triangle " + point + point + point + "be " + circle_name + "(omega, radix_E)"  /* each point must be on circle(center, radix) */
+
+		deterministic = (deterministic_point_single | deterministic_point_double)*
+
+			deterministic_point_single = "Let a 1-equation deterministic point " + point + " situated on " + equation_hyp_single
+			deterministic_point_double = "Let a 2-equations deterministic point " + point + " situated on " + equation_hyp_double + " and " + equation_hyp_double
+
+		constraint__ = "Constraint: " + constraint
+
+	conclusion = "Conclusion:" + equation_concl
+
+===================================================
+
+equation_hyp_double = line |
+						  = "circle " + circle_name |
+						  = line + " perpendicular on " + line |
+						  = line + " paralel with " + line |
+						  = " perpendicular bisector of " + line |
+						  = "tangent at circle " + circle_name + " in point" + point
+
+equation_hyp_single = "centroid of triangle " + point + point + point |
+						  = "symmetric point of " + point + " with respect to" + point
+						  = "projection of " + point + " on " + line
+						  = "midpoint of " + point + point
+
+constraint = " collinear " + point + point + point
+			  = " concurrent " + line + line + line
+			  = line + " perpendicular on " + line |
+			  = line + " parallel with " + line | 
+
+equation_concl = " collinear " + point + point + point
+					= " concurrent " + line + line + line
+					= line + " perpendicular on " + line |
+					= line + " paralel with " + line |  
+					= " triangle is equilateral " + point + point + point|
+					= " concyclic points " + point + point + point + point 
+					= point + " = " + point
+
+line = "line " + point + " " + point
+
+circle_name = "Circ", "Inscr", "Euler"
+
+point = "A" (+ number)?, "B" (+ number)?, .....  + " "
+
+afix_of_point = "a" (+ number)? , "b" (+ number)? , ....
+
+conjugate_of_afix = "a" (+ number)? + "__" , "b" (+ number)? + "__", ....
+
+value = x + iy , where x and y are rational numbers
+
+
+
+

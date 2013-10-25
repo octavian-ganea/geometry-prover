@@ -1,0 +1,108 @@
+====== Parsing .... 
+Description : romanian test 2004 
+
+Hypothesis:
+
+Let an arbitrary circle Inscr(I,radix)
+
+Let a semiarbitrary point X situated on circle Inscr
+Let a semiarbitrary point Y situated on circle Inscr
+Let a semiarbitrary point Z situated on circle Inscr
+
+Let a 2-equations deterministic point A situated on tangent at circle Inscr in point Y and tangent at circle Inscr in point Z
+Let a 2-equations deterministic point B situated on tangent at circle Inscr in point X and tangent at circle Inscr in point Z
+Let a 2-equations deterministic point C situated on tangent at circle Inscr in point Y and tangent at circle Inscr in point X
+Let a 2-equations deterministic point P situated on line A-X and line B-Y
+Let a 2-equations deterministic point M situated on line X-Z and line A-C
+Let a 2-equations deterministic point N situated on line B-C and line Y-Z
+
+Conclusion: line I-P and line M-N are perpendicular
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+X is defined by equation: x * x__ - 1 = 0
+After substitutions and simplifications:
+ x__ = 1  / x
+
+Y is defined by equation: y * y__ - 1 = 0
+After substitutions and simplifications:
+ y__ = 1  / y
+
+Z is defined by equation: z * z__ - 1 = 0
+After substitutions and simplifications:
+ z__ = 1  / z
+
+========= List of deterministic points:
+
+A is defined by equation: a + a__ * y^2 - 2 * y = 0
+         and by equation: a + a__ * z^2 - 2 * z = 0
+After substitutions and simplifications:
+ a  =  2 * y * z  / z + y
+ a__  =  2  / y + z 
+
+
+B is defined by equation: b + b__ * x^2 - 2 * x = 0
+         and by equation: b + b__ * z^2 - 2 * z = 0
+After substitutions and simplifications:
+ b  =  2 * x * z  / z + x
+ b__  =  2  / x + z 
+
+
+C is defined by equation: c + c__ * y^2 - 2 * y = 0
+         and by equation: c + c__ * x^2 - 2 * x = 0
+After substitutions and simplifications:
+ c  =  2 * x * y  / y + x
+ c__  =  2  / x + y 
+
+
+P is defined by equation: a__ * p + a * x__ + p__ * x - p * x__ - a * p__ - a__ * x = 0
+         and by equation: b__ * p + b * y__ + p__ * y - p * y__ - b * p__ - b__ * y = 0
+After substitutions and simplifications:
+ p  =  2 * y^2 * z^2 + 2 * x^2 * y^2 + 2 * x^2 * z^2 - 2 * x * y * z^2 - 2 * x * y^2 * z - 2 * x^2 * y * z  / x^2 * z + x * y^2 + y^2 * z + y * z^2 + x^2 * y + x * z^2 - 6 * x * y * z
+ p__  =  2 * x^2 + 2 * z^2 + 2 * y^2 - 2 * x * y - 2 * x * z - 2 * y * z  / y^2 * z + x * z^2 + x^2 * z + x^2 * y + y * z^2 + x * y^2 - 6 * x * y * z 
+
+
+M is defined by equation: m * x__ + x * z__ + m__ * z - m * z__ - m__ * x - x__ * z = 0
+         and by equation: a__ * m + a * c__ + c * m__ - c__ * m - a * m__ - a__ * c = 0
+After substitutions and simplifications:
+ m  =  y^2 * z + x * y^2 - 2 * x * y * z  / y^2 - x * z
+ m__  =  x + z - 2 * y  / x * z - y^2 
+
+
+N is defined by equation: b__ * n + b * c__ + c * n__ - c__ * n - b * n__ - b__ * c = 0
+         and by equation: n * y__ + y * z__ + n__ * z - n * z__ - n__ * y - y__ * z = 0
+After substitutions and simplifications:
+ n  =  2 * x * y * z - x^2 * z - x^2 * y  / y * z - x^2
+ n__  =  2 * x - y - z  / x^2 - y * z 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points Y and X can not be symmetric with respect to the center of the arbitrary circle 
+ -- points Z and X can not be symmetric with respect to the center of the arbitrary circle 
+ -- points Z and Y can not be symmetric with respect to the center of the arbitrary circle 
+ -- points Y and X must be different
+ -- points Z and X must be different
+ -- points Z and Y must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+i * n__ + m__ * p + i__ * n + m * p__ - i * m__ - n__ * p - n * p__ - i__ * m = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

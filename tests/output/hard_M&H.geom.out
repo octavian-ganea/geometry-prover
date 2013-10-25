@@ -1,0 +1,171 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+Let an arbitrary point M
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+
+Let a 1-equation deterministic point A1 situated on projection of A on line B-C
+Let a 1-equation deterministic point B1 situated on projection of B on line A-C
+Let a 1-equation deterministic point C1 situated on projection of C on line A-B
+Let a 1-equation deterministic point A2 situated on projection of M on line B-C
+Let a 1-equation deterministic point B2 situated on projection of M on line A-C
+Let a 1-equation deterministic point C2 situated on projection of M on line A-B
+Let a 2-equations deterministic point H situated on line A-A1 and line B-B1
+Let a 1-equation deterministic point A3 situated on symmetric point of H with respect to A1
+Let a 1-equation deterministic point B3 situated on symmetric point of H with respect to B1
+Let a 1-equation deterministic point C3 situated on symmetric point of H with respect to C1
+Let a 1-equation deterministic point A4 situated on symmetric point of M with respect to A2
+Let a 1-equation deterministic point B4 situated on symmetric point of M with respect to B2
+Let a 1-equation deterministic point C4 situated on symmetric point of M with respect to C2
+Let a 2-equations deterministic point X13 situated on line A3-A4 and line B3-B4
+
+Conclusion: points X13, C3 and C4 are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+========= List of deterministic points:
+
+A1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a1  =  a * c + a^2 + a * b - b * c  / 2 * a 
+
+ a1__  =  a * b + b * c + a * c - a^2  / 2 * a * b * c 
+
+
+B1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b1  =  b * c + b^2 + a * b - a * c  / 2 * b 
+
+ b1__  =  a * b + a * c + b * c - b^2  / 2 * a * b * c 
+
+
+C1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c1  =  b * c + c^2 + a * c - a * b  / 2 * c 
+
+ c1__  =  a * c + a * b + b * c - c^2  / 2 * a * b * c 
+
+
+A2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a2  =  c + m + b - b * c * m__  / 2 
+
+ a2__  =  b + b * c * m__ + c - m  / 2 * b * c 
+
+
+B2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b2  =  c + m + a - a * c * m__  / 2 
+
+ b2__  =  a + a * c * m__ + c - m  / 2 * a * c 
+
+
+C2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c2  =  b + m + a - a * b * m__  / 2 
+
+ c2__  =  a + a * b * m__ + b - m  / 2 * a * b 
+
+
+H is defined by equation: a__ * h + a * a1__ + a1 * h__ - a1__ * h - a * h__ - a1 * a__ = 0
+         and by equation: b__ * h + b * b1__ + b1 * h__ - b1__ * h - b * h__ - b1 * b__ = 0
+After substitutions and simplifications:
+ h  =  c + b + a
+ h__  =  a * b + a * c + b * c  / a * b * c 
+
+
+A3 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a3  =   - b * c  / a 
+
+ a3__  =   - a  / b * c 
+
+
+B3 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b3  =   - a * c  / b 
+
+ b3__  =   - b  / a * c 
+
+
+C3 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c3  =   - a * b  / c 
+
+ c3__  =   - c  / a * b 
+
+
+A4 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a4  =  c + b - b * c * m__ 
+
+ a4__  =  b + c - m  / b * c 
+
+
+B4 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b4  =  c + a - a * c * m__ 
+
+ b4__  =  a + c - m  / a * c 
+
+
+C4 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c4  =  b + a - a * b * m__ 
+
+ c4__  =  a + b - m  / a * b 
+
+
+X13 is defined by equation: a3__ * x13 + a3 * a4__ + a4 * x13__ - a4__ * x13 - a3 * x13__ - a3__ * a4 = 0
+         and by equation: b3__ * x13 + b3 * b4__ + b4 * x13__ - b4__ * x13 - b3 * x13__ - b3__ * b4 = 0
+After substitutions and simplifications:
+ x13  =  2 * a^2 * b * c^2 * m__ + 2 * a * b^2 * c^2 * m__ + 2 * a^2 * b^2 * c * m__ - 2 * a * b * c^2 - 2 * a^2 * b * c - b^2 * c^2 - 2 * a * b^2 * c - a^2 * b^2 * c^2 * m__^2 - a^2 * b^2 - a^2 * c^2  / b * c * m + a * c * m + a * b^2 * c * m__ + a^2 * b * c * m__ + a * b * c^2 * m__ + a * b * m - b^2 * c - 3 * a * b * c - b * c^2 - a * c^2 - a * b * c * m * m__ - a * b^2 - a^2 * b - a^2 * c
+ x13__  =  2 * b * m + 2 * a * m + 2 * c * m - 2 * a * b - 2 * b * c - a^2 - 2 * a * c - m^2 - c^2 - b^2  / a^2 * b * c * m__ + a * b^2 * c * m__ + a * c * m + b * c * m + a * b * m + a * b * c^2 * m__ - a^2 * c - 3 * a * b * c - a^2 * b - a * b^2 - a * b * c * m * m__ - a * c^2 - b * c^2 - b^2 * c 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points B and A can not be symmetric with respect to the center of the arbitrary circle 
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+c3__ * x13 + c3 * c4__ + c4 * x13__ - c4__ * x13 - c3 * x13__ - c3__ * c4 = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

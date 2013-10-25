@@ -1,0 +1,58 @@
+====== Parsing .... 
+Description : intersection of altitudes in a triangle is a single point - the ortocenter 
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point D situated on circle Circ
+
+
+Conclusion: points A, B, C and D are concyclic
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+D is defined by equation: d * d__ - 1 = 0
+After substitutions and simplifications:
+ d__ = 1  / d
+
+========= List of deterministic points:
+=========== Equations were generated successfully ========
+
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+a__ * c * d * d__ + b__ * c * c__ * d + a * a__ * b * d__ + a * b * b__ * c__ + a * c * c__ * d__ + a * a__ * b__ * c + a * a__ * c__ * d + a * b__ * d * d__ + a__ * b * c * c__ + b * b__ * c * d__ + b * c__ * d * d__ + a__ * b * b__ * d - a * a__ * c * d__ - a * b__ * c * c__ - a__ * c * c__ * d - b__ * c * d * d__ - a * a__ * b * c__ - a * b * b__ * d__ - a__ * b * d * d__ - b * b__ * c__ * d - a * c__ * d * d__ - a * a__ * b__ * d - b * c * c__ * d__ - a__ * b * b__ * c = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

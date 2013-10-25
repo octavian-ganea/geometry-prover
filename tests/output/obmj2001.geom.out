@@ -1,0 +1,100 @@
+====== Parsing .... 
+Description : balkan mathematical olympiad for juniors 2001 
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point A situated on line A-B perpendicular on line A-C
+
+Let a 2-equations deterministic point D situated on line A-B and circle Circ
+Let a 2-equations deterministic point E situated on line A-C and circle Circ
+Let a 2-equations deterministic point S situated on line B-C and line A-S perpendicular on line B-C
+Let a 2-equations deterministic point K situated on line D-E and line A-S
+Let a 1-equation deterministic point M situated on midpoint of B C
+
+Conclusion: line A-K and line O-M are parallel
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+A is defined by equation: a * c__ + a__ * b + a__ * c + a * b__ - 2 * a * a__ - b * c__ - b__ * c = 0
+After substitutions and simplifications:
+ a__ = a * b + a * c - b^2 - c^2  / 2 * a * b * c - b^2 * c - b * c^2
+
+========= List of deterministic points:
+
+D is defined by equation: a__ * d + a * b__ + b * d__ - b__ * d - a * d__ - a__ * b = 0
+         and by equation: d * d__ - 1 = 0
+After substitutions and simplifications:
+ d  =  c^2 + b * c - 2 * a * c  / b - c
+ d__  =  c - b  / 2 * a * c - c^2 - b * c 
+
+
+E is defined by equation: a__ * e + a * c__ + c * e__ - c__ * e - a * e__ - a__ * c = 0
+         and by equation: e * e__ - 1 = 0
+After substitutions and simplifications:
+ e  =  b^2 + b * c - 2 * a * b  / c - b
+ e__  =  c - b  / b * c + b^2 - 2 * a * b 
+
+
+S is defined by equation: b__ * s + b * c__ + c * s__ - c__ * s - b * s__ - b__ * c = 0
+         and by equation: a * c__ + b__ * s + a__ * c + b * s__ - a * b__ - c__ * s - c * s__ - a__ * b = 0
+After substitutions and simplifications:
+ s  =  a^2 - b * c  / 2 * a - c - b
+ s__  =  4 * a * b^2 + 6 * a * b * c + 4 * a * c^2 + 2 * a^3 - b^3 - c^3 - 5 * a^2 * c - 2 * b * c^2 - 5 * a^2 * b - 2 * b^2 * c  / 4 * a * b * c^2 + 4 * a * b^2 * c - 4 * a^2 * b * c - b^3 * c - b * c^3 - 2 * b^2 * c^2 
+
+
+K is defined by equation: d__ * k + d * e__ + e * k__ - e__ * k - d * k__ - d__ * e = 0
+         and by equation: a__ * k + a * s__ + k__ * s - k * s__ - a * k__ - a__ * s = 0
+After substitutions and simplifications:
+ k  =  32 * a^5 + 160 * a^3 * b * c + 80 * a^3 * c^2 + 60 * a * b^2 * c^2 + 10 * a * c^4 + 40 * a * b * c^3 + 10 * a * b^4 + 80 * a^3 * b^2 + 40 * a * b^3 * c - 80 * a^4 * b - 120 * a^2 * b^2 * c - 40 * a^2 * c^3 - 40 * a^2 * b^3 - 80 * a^4 * c - 10 * b^2 * c^3 - c^5 - 5 * b * c^4 - 10 * b^3 * c^2 - 5 * b^4 * c - b^5 - 120 * a^2 * b * c^2  / 32 * a^4 + 96 * a^2 * b * c + 2 * b^4 + 12 * b^2 * c^2 + 8 * b * c^3 + 48 * a^2 * c^2 + 2 * c^4 + 8 * b^3 * c + 48 * a^2 * b^2 - 64 * a^3 * c - 64 * a^3 * b - 48 * a * b^2 * c - 16 * a * b^3 - 48 * a * b * c^2 - 16 * a * c^3
+ k__  =  b^4 * c^2 + 48 * a^2 * b^2 * c^2 + b^2 * c^4 + 32 * a^3 * c^3 + 8 * a * c^5 + 32 * a^4 * b * c + 32 * a^3 * b^3 + 8 * a * b^4 * c + 4 * b^3 * c^3 + 8 * a * b * c^4 + 8 * a * b^5 - 24 * a^2 * b^4 - b^6 - 16 * a^4 * b^2 - 16 * a^4 * c^2 - 32 * a^3 * b * c^2 - 24 * a^2 * c^4 - c^6 - 16 * a * b^2 * c^3 - 2 * b^5 * c - 2 * b * c^5 - 32 * a^3 * b^2 * c - 16 * a * b^3 * c^2  / 64 * a^5 * b * c + 160 * a^3 * b^3 * c + 160 * a^3 * b * c^3 + 20 * a * b^5 * c + 120 * a * b^3 * c^3 + 20 * a * b * c^5 + 80 * a * b^2 * c^4 + 320 * a^3 * b^2 * c^2 + 80 * a * b^4 * c^2 - 160 * a^4 * b * c^2 - 80 * a^2 * b * c^4 - 20 * b^3 * c^4 - 2 * b * c^6 - 2 * b^6 * c - 10 * b^2 * c^5 - 240 * a^2 * b^2 * c^3 - 80 * a^2 * b^4 * c - 10 * b^5 * c^2 - 160 * a^4 * b^2 * c - 20 * b^4 * c^3 - 240 * a^2 * b^3 * c^2 
+
+
+M is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ m  =  b + c  / 2 
+
+ m__  =  c + b  / 2 * b * c 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points C and B can not be symmetric with respect to the center of the arbitrary circle 
+ -- points E and C must be different
+ -- points C and A must be different
+ -- points C and B must be different
+ -- points D and B must be different
+ -- points B and A must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+a * m__ + k * o__ + k__ * m + a__ * o - a * o__ - k * m__ - a__ * m - k__ * o = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

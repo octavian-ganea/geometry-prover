@@ -1,0 +1,7 @@
+run tests/gauss.geom
+run tests/centroid.geom
+quit
+run tests/centroid.geom
+quit
+run tests/centroid.geom
+quit

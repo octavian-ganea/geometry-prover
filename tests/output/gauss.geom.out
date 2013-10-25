@@ -1,0 +1,82 @@
+====== Parsing .... 
+Description : Gauss theorem 
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+Let an arbitrary point D
+Let an arbitrary point C
+Let an arbitrary point B
+Let an arbitrary point A
+
+
+Let a 2-equations deterministic point X situated on line A-B and line C-D
+Let a 2-equations deterministic point Y situated on line C-B and line A-D
+Let a 1-equation deterministic point M situated on midpoint of A C
+Let a 1-equation deterministic point N situated on midpoint of B D
+Let a 1-equation deterministic point P situated on midpoint of X Y
+
+Conclusion: points M, N and P are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+========= List of deterministic points:
+
+X is defined by equation: a__ * x + a * b__ + b * x__ - b__ * x - a * x__ - a__ * b = 0
+         and by equation: c__ * x + c * d__ + d * x__ - d__ * x - c * x__ - c__ * d = 0
+After substitutions and simplifications:
+ x  =  a * b__ * d + a__ * b * c + a * c * d__ + b * c__ * d - a * b__ * c - a__ * b * d - a * c__ * d - b * c * d__  / a__ * c + b__ * d + a * d__ + b * c__ - a__ * d - b__ * c - a * c__ - b * d__
+ x__  =  a__ * b * d__ + a * b__ * c__ + a__ * c__ * d + b__ * c * d__ - a__ * b * c__ - a * b__ * d__ - a__ * c * d__ - b__ * c__ * d  / a * c__ + b * d__ + a__ * d + b__ * c - a * d__ - b * c__ - a__ * c - b__ * d 
+
+
+Y is defined by equation: c__ * y + b__ * c + b * y__ - b__ * y - c * y__ - b * c__ = 0
+         and by equation: a__ * y + a * d__ + d * y__ - d__ * y - a * y__ - a__ * d = 0
+After substitutions and simplifications:
+ y  =  b__ * c * d + a * b * c__ + a * c * d__ + a__ * b * d - a * b__ * c - b * c__ * d - a__ * c * d - a * b * d__  / a * c__ + b__ * d + c * d__ + a__ * b - c__ * d - a * b__ - a__ * c - b * d__
+ y__  =  b * c__ * d__ + a__ * b__ * c + a__ * c__ * d + a * b__ * d__ - a__ * b * c__ - b__ * c * d__ - a * c__ * d__ - a__ * b__ * d  / a__ * c + b * d__ + c__ * d + a * b__ - c * d__ - a__ * b - a * c__ - b__ * d 
+
+
+M is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ m  =  a + c  / 2 
+
+ m__  =  a__ + c__  / 2 
+
+
+N is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ n  =  b + d  / 2 
+
+ n__  =  b__ + d__  / 2 
+
+
+P is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ p  =  a^2 * b__^2 * c + 4 * a * b * b__ * c * d__ + 2 * a^2 * b__ * c__ * d + a * b__^2 * d^2 + 4 * a * b__ * c * d * d__ + 2 * a * a__ * b * b__ * d + 2 * a * a__ * b * c * c__ + 2 * a__ * b * c^2 * d__ + a__^2 * b^2 * c + 2 * a__ * b * c__ * d^2 + 2 * a__^2 * b * c * d + a * c^2 * d__^2 + a * c__^2 * d^2 + 2 * a * a__ * c * c__ * d + 2 * b * c * c__ * d * d__ + b^2 * c * d__^2 + 2 * a * b * c__^2 * d + 2 * a__ * b^2 * c__ * d + 2 * a__ * b__ * c^2 * d + a__^2 * c * d^2 + 2 * a * a__ * b * d * d__ + a * b__^2 * c^2 + 2 * b * b__ * c * c__ * d + b__^2 * c * d^2 + 2 * a^2 * b * c__ * d__ + a^2 * c * d__^2 + a * b^2 * c__^2 + a * b^2 * d__^2 - 2 * a * b__^2 * c * d - 2 * a * b__ * c^2 * d__ - 2 * a * a__ * b * b__ * c - 2 * a * b__ * c__ * d^2 - a^2 * b__^2 * d - 2 * a * b * b__ * d * d__ - 4 * a__ * b * c * c__ * d - a__^2 * b * c^2 - 2 * a__ * b^2 * c * d__ - 4 * a * a__ * b * c__ * d - a__^2 * b^2 * d - 2 * a * c * c__ * d * d__ - 2 * a^2 * b__ * c * d__ - 2 * a * b * c * d__^2 - a^2 * c__^2 * d - 2 * b * b__ * c * d * d__ - b * c^2 * d__^2 - b * c__^2 * d^2 - a__^2 * c^2 * d - 2 * a__ * b__ * c * d^2 - 2 * a * a__ * c * d * d__ - a__^2 * b * d^2 - b__^2 * c^2 * d - 2 * a * b * b__ * c * c__ - a^2 * b * c__^2 - a^2 * b * d__^2 - b^2 * c__^2 * d - 2 * a * b^2 * c__ * d__  / 4 * a * a__ * c * c__ + 2 * a^2 * c__ * d__ + 2 * a * b * c__^2 + 2 * a__ * c__ * d^2 + 2 * b__ * c * c__ * d + 2 * a * c__^2 * d + 2 * b * c__ * d * d__ + 2 * a * a__ * b__ * d + 2 * a * b__^2 * c + 2 * a^2 * b__ * c__ + 2 * a * b * b__ * d__ + 2 * b__^2 * d^2 + 2 * a * b__ * d * d__ + 2 * b * b__ * c__ * d + 2 * a__^2 * c * d + 2 * a__ * b__ * c^2 + 2 * a__ * c^2 * d__ + 2 * b__ * c * d * d__ + 2 * a * c * d__^2 + 2 * b * c * c__ * d__ + 2 * a__^2 * b * c + 2 * a__ * b * b__ * d + 2 * a * a__ * b * d__ + 2 * a__ * b^2 * c__ + 2 * a__ * b * d * d__ + 2 * b * b__ * c * d__ + 2 * b^2 * d__^2 - 2 * a * a__ * c__ * d - 2 * a * b__ * c * c__ - 2 * a^2 * c__^2 - 2 * a__ * c * c__ * d - 2 * b__ * c__ * d^2 - 2 * a * c__ * d * d__ - 2 * b * c__^2 * d - 2 * a * a__ * b__ * c - 2 * a * b__^2 * d - 2 * a^2 * b__ * d__ - 2 * a * b * b__ * c__ - 2 * a__ * b__ * d^2 - 2 * b__^2 * c * d - 4 * b * b__ * d * d__ - 2 * a__^2 * c^2 - 2 * a * a__ * c * d__ - 2 * a__ * b * c * c__ - 2 * a__ * c * d * d__ - 2 * b__ * c^2 * d__ - 2 * a * c * c__ * d__ - 2 * b * c * d__^2 - 2 * a__^2 * b * d - 2 * a__ * b * b__ * c - 2 * a * a__ * b * c__ - 2 * a__ * b^2 * d__ - 2 * a * b * d__^2 - 2 * b^2 * c__ * d__ 
+
+ p__  =  a__^2 * b^2 * c__ + 4 * a__ * b * b__ * c__ * d + 2 * a__^2 * b * c * d__ + a__ * b^2 * d__^2 + 4 * a__ * b * c__ * d * d__ + 2 * a * a__ * b * b__ * d__ + 2 * a * a__ * b__ * c * c__ + 2 * a * b__ * c__^2 * d + a^2 * b__^2 * c__ + 2 * a * b__ * c * d__^2 + 2 * a^2 * b__ * c__ * d__ + a__ * c__^2 * d^2 + a__ * c^2 * d__^2 + 2 * a * a__ * c * c__ * d__ + 2 * b__ * c * c__ * d * d__ + b__^2 * c__ * d^2 + 2 * a__ * b__ * c^2 * d__ + 2 * a * b__^2 * c * d__ + 2 * a * b * c__^2 * d__ + a^2 * c__ * d__^2 + 2 * a * a__ * b__ * d * d__ + a__ * b^2 * c__^2 + 2 * b * b__ * c * c__ * d__ + b^2 * c__ * d__^2 + 2 * a__^2 * b__ * c * d + a__^2 * c__ * d^2 + a__ * b__^2 * c^2 + a__ * b__^2 * d^2 - 2 * a__ * b^2 * c__ * d__ - 2 * a__ * b * c__^2 * d - 2 * a * a__ * b * b__ * c__ - 2 * a__ * b * c * d__^2 - a__^2 * b^2 * d__ - 2 * a__ * b * b__ * d * d__ - 4 * a * b__ * c * c__ * d__ - a^2 * b__ * c__^2 - 2 * a * b__^2 * c__ * d - 4 * a * a__ * b__ * c * d__ - a^2 * b__^2 * d__ - 2 * a__ * c * c__ * d * d__ - 2 * a__^2 * b * c__ * d - 2 * a__ * b__ * c__ * d^2 - a__^2 * c^2 * d__ - 2 * b * b__ * c__ * d * d__ - b__ * c__^2 * d^2 - b__ * c^2 * d__^2 - a^2 * c__^2 * d__ - 2 * a * b * c__ * d__^2 - 2 * a * a__ * c__ * d * d__ - a^2 * b__ * d__^2 - b^2 * c__^2 * d__ - 2 * a__ * b * b__ * c * c__ - a__^2 * b__ * c^2 - a__^2 * b__ * d^2 - b__^2 * c^2 * d__ - 2 * a__ * b__^2 * c * d  / 4 * a * a__ * c * c__ + 2 * a__^2 * c * d + 2 * a__ * b__ * c^2 + 2 * a * c * d__^2 + 2 * b * c * c__ * d__ + 2 * a__ * c^2 * d__ + 2 * b__ * c * d * d__ + 2 * a * a__ * b * d__ + 2 * a__ * b^2 * c__ + 2 * a__^2 * b * c + 2 * a__ * b * b__ * d + 2 * b^2 * d__^2 + 2 * a__ * b * d * d__ + 2 * b * b__ * c * d__ + 2 * a^2 * c__ * d__ + 2 * a * b * c__^2 + 2 * a * c__^2 * d + 2 * b * c__ * d * d__ + 2 * a__ * c__ * d^2 + 2 * b__ * c * c__ * d + 2 * a^2 * b__ * c__ + 2 * a * b * b__ * d__ + 2 * a * a__ * b__ * d + 2 * a * b__^2 * c + 2 * a * b__ * d * d__ + 2 * b * b__ * c__ * d + 2 * b__^2 * d^2 - 2 * a * a__ * c * d__ - 2 * a__ * b * c * c__ - 2 * a__^2 * c^2 - 2 * a * c * c__ * d__ - 2 * b * c * d__^2 - 2 * a__ * c * d * d__ - 2 * b__ * c^2 * d__ - 2 * a * a__ * b * c__ - 2 * a__ * b^2 * d__ - 2 * a__^2 * b * d - 2 * a__ * b * b__ * c - 2 * a * b * d__^2 - 2 * b^2 * c__ * d__ - 4 * b * b__ * d * d__ - 2 * a^2 * c__^2 - 2 * a * a__ * c__ * d - 2 * a * b__ * c * c__ - 2 * a * c__ * d * d__ - 2 * b * c__^2 * d - 2 * a__ * c * c__ * d - 2 * b__ * c__ * d^2 - 2 * a^2 * b__ * d__ - 2 * a * b * b__ * c__ - 2 * a * a__ * b__ * c - 2 * a * b__^2 * d - 2 * a__ * b__ * d^2 - 2 * b__^2 * c * d 
+
+=========== Equations were generated successfully ========
+
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+m * n__ + n * p__ + m__ * p - m * p__ - m__ * n - n__ * p = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

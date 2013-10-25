@@ -1,0 +1,136 @@
+====== Parsing .... 
+Description : mathot's theorem 
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point D situated on circle Circ
+
+Let a 1-equation deterministic point A1 situated on midpoint of A B
+Let a 1-equation deterministic point B1 situated on midpoint of B C
+Let a 1-equation deterministic point C1 situated on midpoint of C D
+Let a 1-equation deterministic point D1 situated on midpoint of D A
+Let a 1-equation deterministic point A2 situated on projection of A1 on line C-D
+Let a 1-equation deterministic point B2 situated on projection of B1 on line A-D
+Let a 1-equation deterministic point C2 situated on projection of C1 on line A-B
+Let a 1-equation deterministic point D2 situated on projection of D1 on line B-C
+Let a 2-equations deterministic point X13 situated on line A2-A1 and line B2-B1
+
+Conclusion: points X13, C2 and C1 are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+D is defined by equation: d * d__ - 1 = 0
+After substitutions and simplifications:
+ d__ = 1  / d
+
+========= List of deterministic points:
+
+A1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a1  =  a + b  / 2 
+
+ a1__  =  b + a  / 2 * a * b 
+
+
+B1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b1  =  b + c  / 2 
+
+ b1__  =  c + b  / 2 * b * c 
+
+
+C1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c1  =  c + d  / 2 
+
+ c1__  =  d + c  / 2 * c * d 
+
+
+D1 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ d1  =  d + a  / 2 
+
+ d1__  =  a + d  / 2 * a * d 
+
+
+A2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a2  =  2 * a * b * d + a^2 * b + a * b^2 + 2 * a * b * c - b * c * d - a * c * d  / 4 * a * b 
+
+ a2__  =  2 * a * b * c + b * c * d + a * c * d + 2 * a * b * d - a^2 * b - a * b^2  / 4 * a * b * c * d 
+
+
+B2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ b2  =  2 * b * c * d + b^2 * c + b * c^2 + 2 * a * b * c - a * c * d - a * b * d  / 4 * b * c 
+
+ b2__  =  2 * a * b * c + a * c * d + a * b * d + 2 * b * c * d - b^2 * c - b * c^2  / 4 * a * b * c * d 
+
+
+C2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ c2  =  2 * b * c * d + c^2 * d + c * d^2 + 2 * a * c * d - a * b * d - a * b * c  / 4 * c * d 
+
+ c2__  =  2 * a * c * d + a * b * d + a * b * c + 2 * b * c * d - c^2 * d - c * d^2  / 4 * a * b * c * d 
+
+
+D2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ d2  =  2 * a * c * d + a * d^2 + a^2 * d + 2 * a * b * d - a * b * c - b * c * d  / 4 * a * d 
+
+ d2__  =  2 * a * b * d + a * b * c + b * c * d + 2 * a * c * d - a * d^2 - a^2 * d  / 4 * a * b * c * d 
+
+
+X13 is defined by equation: a2__ * x13 + a1__ * a2 + a1 * x13__ - a1__ * x13 - a2 * x13__ - a1 * a2__ = 0
+         and by equation: b2__ * x13 + b1__ * b2 + b1 * x13__ - b1__ * x13 - b2 * x13__ - b1 * b2__ = 0
+After substitutions and simplifications:
+ x13  =  2 * b^2 * c^2 * d^3 + b^3 * c^2 * d^2 + b^2 * c^3 * d^2 + a * b * c^2 * d^3 + 5 * a^2 * b * c^2 * d^2 + 3 * a * b^3 * c^2 * d + 3 * a^2 * b * c^3 * d + 2 * a^4 * b^2 * c + a^3 * b^2 * d^2 + 3 * a * b^4 * c * d + 3 * a * b^3 * c^3 + 2 * a * b^2 * c^4 + a^2 * b * c * d^3 + 3 * a^2 * b^3 * c * d + 3 * a^3 * b * c^2 * d + 2 * a^2 * b^2 * d^3 + a^2 * b^3 * d^2 + 3 * a^3 * b^3 * c - 5 * a * b^2 * c * d^3 - a * b^3 * c * d^2 - 3 * a * b^2 * c^2 * d^2 - 3 * a^2 * b^2 * c^2 * d - a^2 * c^3 * d^2 - a^4 * b * c * d - 2 * a^3 * b^3 * d - 3 * a^2 * b^3 * c^2 - a^2 * b^4 * d - 3 * a^2 * b^2 * c^3 - a * b^5 * c - a^2 * c^2 * d^3 - b^4 * c^2 * d - 2 * b^3 * c^3 * d - b^2 * c^4 * d - a * b * c^4 * d - 3 * a^2 * b^2 * c * d^2 - a^3 * c^2 * d^2 - 3 * a^3 * b^2 * c^2 - a * b^2 * c^3 * d - a^3 * b^2 * c * d - a^4 * b^2 * d  / 8 * a * b^3 * c * d + 8 * a^2 * b * c^2 * d + 2 * a * b^3 * c^2 + 2 * a * b * c^2 * d^2 + 4 * b^2 * c^2 * d^2 + 4 * a * b^2 * c^3 + 2 * a^2 * b^3 * c + 2 * a^2 * b * c * d^2 + 4 * a^2 * b^2 * d^2 + 4 * a^3 * b^2 * c - 10 * a^2 * b^2 * c^2 - 2 * a^3 * b * c * d - 10 * a * b^2 * c * d^2 - 2 * a * b^4 * c - 2 * b^3 * c^2 * d - 2 * b^2 * c^3 * d - 2 * a^2 * c^2 * d^2 - 2 * a * b * c^3 * d - 2 * a * b^2 * c^2 * d - 2 * a^2 * b^3 * d - 2 * a^2 * b^2 * c * d - 2 * a^3 * b^2 * d
+ x13__  =  2 * a^4 * b^3 * c^2 + a^4 * b^2 * c^2 * d + a^4 * b^3 * c * d + a^3 * b^4 * c^2 + 5 * a^2 * b^4 * c^2 * d + 3 * a^3 * b^2 * c^2 * d^2 + 3 * a^2 * b^4 * c * d^2 + 2 * b^3 * c^3 * d^3 + a * b^3 * c^4 * d + 3 * a^3 * b * c^3 * d^2 + 3 * a^3 * b^2 * c * d^3 + 2 * a^3 * b^3 * d^3 + a^2 * b^4 * c^3 + 3 * a^2 * b^2 * c^3 * d^2 + 3 * a * b^4 * c^2 * d^2 + 2 * a^2 * b^3 * c^4 + a^2 * b^2 * c^4 * d + 3 * a * b^2 * c^3 * d^3 - 5 * a^3 * b^3 * c^3 - a^3 * b^2 * c^3 * d - 3 * a^3 * b^3 * c^2 * d - 3 * a^2 * b^3 * c^2 * d^2 - a^2 * b^5 * c * d - b^4 * c^3 * d^2 - 2 * a * b^2 * c^4 * d^2 - 3 * a^2 * b^2 * c^2 * d^3 - a^2 * b * c^4 * d^2 - 3 * a^2 * b^3 * c * d^3 - a^3 * c^3 * d^3 - a^2 * b^5 * c^2 - a^4 * b * c^2 * d^2 - 2 * a^4 * b^2 * c * d^2 - a^4 * b^3 * d^2 - a^3 * b^4 * d^2 - 3 * a^2 * b^3 * c^3 * d - a * b^5 * c^2 * d - 3 * a * b^3 * c^2 * d^3 - a^3 * b^3 * c * d^2 - a * b^3 * c^3 * d^2 - b^3 * c^4 * d^2  / 8 * a^3 * b^2 * c^3 * d^2 + 8 * a^2 * b^4 * c^2 * d^2 + 2 * a^3 * b^2 * c^2 * d^3 + 2 * a^3 * b^4 * c^2 * d + 4 * a^4 * b^3 * c^2 * d + 4 * a^3 * b^3 * c * d^3 + 2 * a^2 * b^2 * c^3 * d^3 + 2 * a^2 * b^4 * c^3 * d + 4 * a^2 * b^3 * c^4 * d + 4 * a * b^3 * c^3 * d^3 - 10 * a^2 * b^3 * c^2 * d^3 - 2 * a * b^4 * c^3 * d^2 - 10 * a^3 * b^3 * c^3 * d - 2 * a^3 * b * c^3 * d^3 - 2 * a^4 * b^2 * c^2 * d^2 - 2 * a^4 * b^3 * c * d^2 - 2 * a^2 * b^5 * c^2 * d - 2 * a^3 * b^4 * c * d^2 - 2 * a^3 * b^3 * c^2 * d^2 - 2 * a^2 * b^2 * c^4 * d^2 - 2 * a^2 * b^3 * c^3 * d^2 - 2 * a * b^3 * c^4 * d^2 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points C and A must be different
+ -- points C and B must be different
+ -- points B and A must be different
+ -- points D and A must be different
+ -- points D and C must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+c2__ * x13 + c1__ * c2 + c1 * x13__ - c1__ * x13 - c2 * x13__ - c1 * c2__ = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

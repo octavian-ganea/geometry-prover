@@ -1,0 +1,105 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+
+Let a 2-equations deterministic point A1 situated on line B-C and line A-A1 perpendicular on line B-C
+Let a 2-equations deterministic point B1 situated on line A-C and line B-B1 perpendicular on line A-C
+Let a 1-equation deterministic point M situated on midpoint of B C
+Let a 1-equation deterministic point N situated on midpoint of B A
+Let a 2-equations deterministic point G situated on line A-M and line C-N
+Let a 2-equations deterministic point H situated on line A-A1 and line B-B1
+
+Conclusion: points O, H and G are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+========= List of deterministic points:
+
+A1 is defined by equation: a1 * b__ + b * c__ + a1__ * c - a1 * c__ - a1__ * b - b__ * c = 0
+         and by equation: a * c__ + a1 * b__ + a__ * c + a1__ * b - a * b__ - a1 * c__ - a1__ * c - a__ * b = 0
+After substitutions and simplifications:
+ a1  =  a * c + a^2 + a * b - b * c  / 2 * a
+ a1__  =  a * b + b * c + a * c - a^2  / 2 * a * b * c 
+
+
+B1 is defined by equation: a__ * b1 + a * c__ + b1__ * c - b1 * c__ - a * b1__ - a__ * c = 0
+         and by equation: b * c__ + a__ * b1 + b__ * c + a * b1__ - a__ * b - b1 * c__ - b1__ * c - a * b__ = 0
+After substitutions and simplifications:
+ b1  =  b * c + b^2 + a * b - a * c  / 2 * b
+ b1__  =  a * b + a * c + b * c - b^2  / 2 * a * b * c 
+
+
+M is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ m  =  b + c  / 2 
+
+ m__  =  c + b  / 2 * b * c 
+
+
+N is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ n  =  b + a  / 2 
+
+ n__  =  a + b  / 2 * a * b 
+
+
+G is defined by equation: a__ * g + a * m__ + g__ * m - g * m__ - a * g__ - a__ * m = 0
+         and by equation: c__ * g + c * n__ + g__ * n - g * n__ - c * g__ - c__ * n = 0
+After substitutions and simplifications:
+ g  =  c + b + a  / 3
+ g__  =  a * b + a * c + b * c  / 3 * a * b * c 
+
+
+H is defined by equation: a__ * h + a * a1__ + a1 * h__ - a1__ * h - a * h__ - a1 * a__ = 0
+         and by equation: b__ * h + b * b1__ + b1 * h__ - b1__ * h - b * h__ - b1 * b__ = 0
+After substitutions and simplifications:
+ h  =  c + b + a
+ h__  =  a * b + a * c + b * c  / a * b * c 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+h__ * o + g__ * h + g * o__ - g__ * o - h * o__ - g * h__ = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

@@ -1,0 +1,111 @@
+====== Parsing .... 
+Description : newton's theorem 
+
+Hypothesis:
+
+Let an arbitrary circle Inscr(I,radix)
+
+Let a semiarbitrary point X situated on circle Inscr
+Let a semiarbitrary point Y situated on circle Inscr
+Let a semiarbitrary point Z situated on circle Inscr
+Let a semiarbitrary point T situated on circle Inscr
+
+Let a 2-equations deterministic point A situated on tangent at circle Inscr in point X and tangent at circle Inscr in point Y
+Let a 2-equations deterministic point B situated on tangent at circle Inscr in point Y and tangent at circle Inscr in point Z
+Let a 2-equations deterministic point C situated on tangent at circle Inscr in point Z and tangent at circle Inscr in point T
+Let a 2-equations deterministic point D situated on tangent at circle Inscr in point T and tangent at circle Inscr in point X
+Let a 1-equation deterministic point M situated on midpoint of A C
+Let a 1-equation deterministic point N situated on midpoint of B D
+
+Conclusion: points M, I and N are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+X is defined by equation: x * x__ - 1 = 0
+After substitutions and simplifications:
+ x__ = 1  / x
+
+Y is defined by equation: y * y__ - 1 = 0
+After substitutions and simplifications:
+ y__ = 1  / y
+
+Z is defined by equation: z * z__ - 1 = 0
+After substitutions and simplifications:
+ z__ = 1  / z
+
+T is defined by equation: t * t__ - 1 = 0
+After substitutions and simplifications:
+ t__ = 1  / t
+
+========= List of deterministic points:
+
+A is defined by equation: a + a__ * x^2 - 2 * x = 0
+         and by equation: a + a__ * y^2 - 2 * y = 0
+After substitutions and simplifications:
+ a  =  2 * x * y  / y + x
+ a__  =  2  / x + y 
+
+
+B is defined by equation: b + b__ * y^2 - 2 * y = 0
+         and by equation: b + b__ * z^2 - 2 * z = 0
+After substitutions and simplifications:
+ b  =  2 * y * z  / z + y
+ b__  =  2  / y + z 
+
+
+C is defined by equation: c + c__ * z^2 - 2 * z = 0
+         and by equation: c + c__ * t^2 - 2 * t = 0
+After substitutions and simplifications:
+ c  =  2 * t * z  / z + t
+ c__  =  2  / t + z 
+
+
+D is defined by equation: d + d__ * t^2 - 2 * t = 0
+         and by equation: d + d__ * x^2 - 2 * x = 0
+After substitutions and simplifications:
+ d  =  2 * t * x  / x + t
+ d__  =  2  / t + x 
+
+
+M is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ m  =  x * y * z + t * x * y + t * y * z + t * x * z  / y * z + x * z + t * y + t * x 
+
+ m__  =  t + z + x + y  / t * x + t * y + x * z + y * z 
+
+
+N is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ n  =  x * y * z + t * y * z + t * x * z + t * x * y  / x * z + x * y + t * z + t * y 
+
+ n__  =  t + x + y + z  / t * y + t * z + x * y + x * z 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points X and T must be different
+ -- points Z and T must be different
+ -- points Z and Y must be different
+ -- points Y and X must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+i__ * m + i * n__ + m__ * n - m * n__ - i * m__ - i__ * n = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

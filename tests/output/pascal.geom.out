@@ -1,0 +1,99 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+Let a semiarbitrary point D situated on circle Circ
+Let a semiarbitrary point E situated on circle Circ
+Let a semiarbitrary point F situated on circle Circ
+
+Let a 2-equations deterministic point X situated on line A-B and line D-E
+Let a 2-equations deterministic point Y situated on line C-B and line E-F
+Let a 2-equations deterministic point Z situated on line C-D and line F-A
+
+Conclusion: points X, Y and Z are collinear
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+D is defined by equation: d * d__ - 1 = 0
+After substitutions and simplifications:
+ d__ = 1  / d
+
+E is defined by equation: e * e__ - 1 = 0
+After substitutions and simplifications:
+ e__ = 1  / e
+
+F is defined by equation: f * f__ - 1 = 0
+After substitutions and simplifications:
+ f__ = 1  / f
+
+========= List of deterministic points:
+
+X is defined by equation: a__ * x + a * b__ + b * x__ - b__ * x - a * x__ - a__ * b = 0
+         and by equation: d__ * x + d * e__ + e * x__ - e__ * x - d * x__ - d__ * e = 0
+After substitutions and simplifications:
+ x  =  a * b * e + a * b * d - b * d * e - a * d * e  / a * b - d * e
+ x__  =  d + e - a - b  / d * e - a * b 
+
+
+Y is defined by equation: c__ * y + b__ * c + b * y__ - b__ * y - c * y__ - b * c__ = 0
+         and by equation: e__ * y + e * f__ + f * y__ - f__ * y - e * y__ - e__ * f = 0
+After substitutions and simplifications:
+ y  =  c * e * f + b * e * f - b * c * f - b * c * e  / e * f - b * c
+ y__  =  b + c - e - f  / b * c - e * f 
+
+
+Z is defined by equation: c__ * z + c * d__ + d * z__ - d__ * z - c * z__ - c__ * d = 0
+         and by equation: f__ * z + a__ * f + a * z__ - a__ * z - f * z__ - a * f__ = 0
+After substitutions and simplifications:
+ z  =  a * d * f + a * c * f - c * d * f - a * c * d  / a * f - c * d
+ z__  =  c + d - a - f  / c * d - a * f 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points F and A must be different
+ -- points D and C must be different
+ -- points C and B must be different
+ -- points F and E must be different
+ -- points B and A must be different
+ -- points E and D must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+x * y__ + y * z__ + x__ * z - x * z__ - x__ * y - y__ * z = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+

@@ -1,0 +1,89 @@
+====== Parsing .... 
+
+
+Hypothesis:
+
+Let an arbitrary circle Circ(O,radix)
+
+Let a semiarbitrary point A situated on circle Circ
+Let a semiarbitrary point B situated on circle Circ
+Let a semiarbitrary point C situated on circle Circ
+
+Let a 2-equations deterministic point A1 situated on line B-C and line A-A1 perpendicular on line B-C
+Let a 2-equations deterministic point B1 situated on line A-C and line B-B1 perpendicular on line A-C
+Let a 2-equations deterministic point H situated on line A-A1 and line B-B1
+Let a 1-equation deterministic point A2 situated on symmetric point of H with respect to A1
+
+Conclusion: points A, B, C and A2 are concyclic
+
+====== Parse OK 
+
+====== Proof of the problem:
+
+======= Generating equations for each point ... 
+
+========= List of arbitrary points:
+
+
+========= List of semi-arbitrary points:
+
+A is defined by equation: a * a__ - 1 = 0
+After substitutions and simplifications:
+ a__ = 1  / a
+
+B is defined by equation: b * b__ - 1 = 0
+After substitutions and simplifications:
+ b__ = 1  / b
+
+C is defined by equation: c * c__ - 1 = 0
+After substitutions and simplifications:
+ c__ = 1  / c
+
+========= List of deterministic points:
+
+A1 is defined by equation: a1 * b__ + b * c__ + a1__ * c - a1 * c__ - a1__ * b - b__ * c = 0
+         and by equation: a * c__ + a1 * b__ + a__ * c + a1__ * b - a * b__ - a1 * c__ - a1__ * c - a__ * b = 0
+After substitutions and simplifications:
+ a1  =  a * c + a^2 + a * b - b * c  / 2 * a
+ a1__  =  a * b + b * c + a * c - a^2  / 2 * a * b * c 
+
+
+B1 is defined by equation: a__ * b1 + a * c__ + b1__ * c - b1 * c__ - a * b1__ - a__ * c = 0
+         and by equation: b * c__ + a__ * b1 + b__ * c + a * b1__ - a__ * b - b1 * c__ - b1__ * c - a * b__ = 0
+After substitutions and simplifications:
+ b1  =  b * c + b^2 + a * b - a * c  / 2 * b
+ b1__  =  a * b + a * c + b * c - b^2  / 2 * a * b * c 
+
+
+H is defined by equation: a__ * h + a * a1__ + a1 * h__ - a1__ * h - a * h__ - a1 * a__ = 0
+         and by equation: b__ * h + b * b1__ + b1 * h__ - b1__ * h - b * h__ - b1 * b__ = 0
+After substitutions and simplifications:
+ h  =  c + b + a
+ h__  =  a * b + a * c + b * c  / a * b * c 
+
+
+A2 is a deterministic point defined by equations (After substitutions and simplifications):
+ 
+ a2  =   - b * c  / a 
+
+ a2__  =   - a  / b * c 
+
+=========== Equations were generated successfully ========
+
+======= The conclusion may be correct only unde the following restrictions:
+ -- points B and A must be different
+ -- points C and A must be different
+ -- points C and B must be different
+
+====== Trying to solve the goal of the problem ...
+Conclusion is equivalent to equation: 
+a2 * a2__ * a__ * c + a2 * b__ * c * c__ + a * a2__ * a__ * b + a * b * b__ * c__ + a * a2__ * c * c__ + a * a__ * b__ * c + a * a2 * a__ * c__ + a * a2 * a2__ * b__ + a__ * b * c * c__ + a2__ * b * b__ * c + a2 * a2__ * b * c__ + a2 * a__ * b * b__ - a * a2__ * a__ * c - a * b__ * c * c__ - a2 * a__ * c * c__ - a2 * a2__ * b__ * c - a * a__ * b * c__ - a * a2__ * b * b__ - a2 * a2__ * a__ * b - a2 * b * b__ * c__ - a * a2 * a2__ * c__ - a * a2 * a__ * b__ - a2__ * b * c * c__ - a__ * b * b__ * c = 0
+
+Attempt to prove it by substitutions and simplifications ....
+ 
+  !!!!!!!!!!!!!!!!!!!!!
+  !!!!!! SUCCESS !!!!!!
+  !!!!!!!!!!!!!!!!!!!!!
+
+===== Problem is correct. Proof ends here. QED ====
+
