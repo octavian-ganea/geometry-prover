@@ -32,32 +32,30 @@ problem = description + hypotehsis + conclusion
 
 	conclusion = "Conclusion:" + equation_concl
 
-===================================================
-
 equation_hyp_double = line |
-						  = "circle " + circle_name |
-						  = line + " perpendicular on " + line |
-						  = line + " paralel with " + line |
-						  = " perpendicular bisector of " + line |
-						  = "tangent at circle " + circle_name + " in point" + point
+		    = "circle " + circle_name |
+		    = line + " perpendicular on " + line |
+		    = line + " paralel with " + line |
+		    = " perpendicular bisector of " + line |
+		    = "tangent at circle " + circle_name + " in point" + point
 
 equation_hyp_single = "centroid of triangle " + point + point + point |
-						  = "symmetric point of " + point + " with respect to" + point
-						  = "projection of " + point + " on " + line
-						  = "midpoint of " + point + point
+		    = "symmetric point of " + point + " with respect to" + point
+		    = "projection of " + point + " on " + line
+		    = "midpoint of " + point + point
 
 constraint = " collinear " + point + point + point
-			  = " concurrent " + line + line + line
-			  = line + " perpendicular on " + line |
-			  = line + " parallel with " + line | 
+	   = " concurrent " + line + line + line
+	   = line + " perpendicular on " + line |
+	   = line + " parallel with " + line | 
 
 equation_concl = " collinear " + point + point + point
-					= " concurrent " + line + line + line
-					= line + " perpendicular on " + line |
-					= line + " paralel with " + line |  
-					= " triangle is equilateral " + point + point + point|
-					= " concyclic points " + point + point + point + point 
-					= point + " = " + point
+	       = " concurrent " + line + line + line
+	       = line + " perpendicular on " + line |
+	       = line + " paralel with " + line |  
+	       = " triangle is equilateral " + point + point + point|
+	       = " concyclic points " + point + point + point + point 
+	       = point + " = " + point
 
 line = "line " + point + " " + point
 
@@ -70,7 +68,3 @@ afix_of_point = "a" (+ number)? , "b" (+ number)? , ....
 conjugate_of_afix = "a" (+ number)? + "__" , "b" (+ number)? + "__", ....
 
 value = x + iy , where x and y are rational numbers
-
-
-
-
