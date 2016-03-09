@@ -1,17 +1,9 @@
-Ganea Octavian - geometry theorem prover using complex numbers and unit circle
+Geometry theorem prover using complex numbers and unit circle
 
--needed software: scala 2.7.7 and SBT 0.7.5
-
-- to run the program:
-	- commands :
-	$sbt
-	 > run tests/program_name.geom
-
--output is generated both on screen and in the corresponding file in tests/output/ directory
-- in some cases, computation might take a bit longer (it will finish eventually)
-
-- the program must be run according to the following grammar (see tests/ for more examples):
-
+- needed software: scala 2.7.7 and SBT 0.7.5
+- to run the program: sbt  run tests/program_name.geom
+- output is generated both on screen and in the corresponding file in tests/output/ directory
+- the input must follow the grammar (see tests/ for more examples):
 
 problem = description + hypotehsis + conclusion
 
